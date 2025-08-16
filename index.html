@@ -5,24 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Suraj Korishetti | Portfolio</title>
 
-  <!-- SEO Meta Tags -->
-  <meta name="title" content="Suraj Korishetti | Portfolio">
-  <meta name="description" content="Welcome to my portfolio website. I am Suraj Korishetti, showcasing my projects, skills, and achievements.">
-  <meta name="keywords" content="Suraj Korishetti, Portfolio, Web Developer, Data Science, Projects">
-  <meta name="author" content="Suraj Korishetti">
-
-  <!-- Open Graph / Social Media Preview -->
-  <meta property="og:title" content="Suraj Korishetti | Portfolio">
-  <meta property="og:description" content="Check out my projects, skills, and achievements.">
-  <meta property="og:image" content="images/profile.png">
-  <meta property="og:url" content="https://surajkorishetti.me">
-  <meta property="og:type" content="website">
-
-  <!-- Favicons -->
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
-
   <!-- CSS -->
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/style.css">
 
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZNTBPHQ1QC"></script>
@@ -34,13 +18,57 @@
   </script>
 </head>
 <body>
-  <main>
+
+  <!-- Navigation -->
+  <nav>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <header id="about">
+    <img src="images/profile.png" alt="Suraj Korishetti" class="profile-img">
     <h1>Hello, I’m Suraj 👋</h1>
     <p>Welcome to my portfolio website 🚀</p>
-    <img src="images/profile.png" alt="Suraj Korishetti" width="200">
-  </main>
+  </header>
+
+  <!-- Projects Section -->
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Project 1</h3>
+        <p>Short description of your project.</p>
+      </div>
+      <div class="card">
+        <h3>Project 2</h3>
+        <p>Short description of your project.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills">
+    <h2>Skills</h2>
+    <ul class="skills-list">
+      <li>Web Development</li>
+      <li>Data Science</li>
+      <li>Python / SQL</li>
+      <li>Machine Learning</li>
+    </ul>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email: suraj@example.com</p>
+  </section>
 
   <!-- JS -->
-  <script src="main.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>
