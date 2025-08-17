@@ -10,12 +10,12 @@
 </head>
 <body>
   <!-- Navigation Bar -->
-  <nav>
+  <nav aria-label="Primary">
     <div class="nav-container">
       <div class="brand">
         <a href="#about">Suraj Korishetti</a>
       </div>
-      <ul>
+      <ul class="nav-links">
         <li><a href="#about">About</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#skills">Skills</a></li>
@@ -25,54 +25,69 @@
   </nav>
 
   <!-- About Section -->
-  <header id="about">
-    <img id="profile-img" src="images/profile.png" alt="Suraj Korishetti" class="profile-img" />
-    <h1 id="hero-title">Hello, I’m Suraj 👋</h1>
-    <p id="hero-subtitle">Welcome to my portfolio website 🚀</p>
-    <p id="hero-meta" class="hero-meta"></p>
-    <div id="hero-links" class="hero-links"></div>
+  <header id="about" class="hero">
+    <div class="container hero-inner">
+      <img id="profile-img" src="images/profile.png" alt="Suraj Korishetti" class="profile-img" />
+      <h1 id="hero-title">Hello, I’m Suraj 👋</h1>
+      <p id="hero-subtitle" class="lead">Welcome to my portfolio website 🚀</p>
+      <p id="hero-meta" class="hero-meta"></p>
+      <div id="hero-links" class="hero-links"></div>
+    </div>
   </header>
 
   <!-- Projects Section -->
-  <section id="projects">
-    <h2>Projects</h2>
-    <p class="muted">Automatically fetched from my GitHub profile.</p>
-    <div class="filters">
-      <input id="search" type="search" placeholder="Search projects..." aria-label="Search projects" />
-      <select id="language-filter" aria-label="Filter by language">
-        <option value="">All languages</option>
-      </select>
-      <select id="sort" aria-label="Sort projects">
-        <option value="pushed_at">Recently updated</option>
-        <option value="stargazers_count">Most stars</option>
-        <option value="name">Name A–Z</option>
-      </select>
-    </div>
-    <div id="project-cards" class="cards">
-      <div class="card card--placeholder">Loading projects...</div>
+  <section id="projects" class="section">
+    <div class="container">
+      <h2>Projects</h2>
+      <p class="muted">Automatically fetched from my GitHub profile.</p>
+      <div class="filters" role="group" aria-label="Project filters">
+        <input id="search" type="search" placeholder="Search projects..." aria-label="Search projects" />
+        <select id="language-filter" aria-label="Filter by language">
+          <option value="">All languages</option>
+        </select>
+        <select id="sort" aria-label="Sort projects">
+          <option value="pushed_at">Recently updated</option>
+          <option value="stargazers_count">Most stars</option>
+          <option value="name">Name A–Z</option>
+        </select>
+      </div>
+      <div id="project-cards" class="cards" aria-live="polite">
+        <div class="card card--placeholder">Loading projects...</div>
+      </div>
     </div>
   </section>
 
   <!-- Skills Section -->
-  <section id="skills">
-    <h2>Skills</h2>
-    <ul class="skills-list">
-      <li>Web Development</li>
-      <li>Data Science</li>
-      <li>Python / SQL</li>
-      <li>Machine Learning</li>
-    </ul>
+  <section id="skills" class="section">
+    <div class="container">
+      <h2>Skills</h2>
+      <ul class="skills-list">
+        <li>Web Development</li>
+        <li>Data Engineering</li>
+        <li>Python / SQL</li>
+        <li>Machine Learning</li>
+      </ul>
+    </div>
   </section>
 
   <!-- Contact Section -->
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Email: <a id="contact-email" href="mailto:suraj@example.com">suraj@example.com</a></p>
+  <section id="contact" class="section">
+    <div class="container">
+      <h2>Contact</h2>
+      <p class="center">
+        Email: <a id="contact-email" href="mailto:surajkorishetti111@gmail.com">surajkorishetti111@gmail.com</a>
+        <button id="copy-email-btn" class="btn ghost small" type="button" aria-label="Copy email address">Copy</button>
+      </p>
+    </div>
   </section>
 
   <footer>
     <p>© <span id="year"></span> Suraj Korishetti • <a id="github-link" href="https://github.com/Suri6363498" target="_blank" rel="noopener">GitHub</a></p>
   </footer>
+
+  <noscript>
+    <div class="noscript">This site uses JavaScript to load GitHub projects. Please enable JavaScript.</div>
+  </noscript>
 
   <script>
     // Configure your GitHub username here
@@ -80,7 +95,8 @@
       githubUsername: "Suri6363498",
       includeForks: false,
       includeArchived: false,
-      perPage: 100
+      perPage: 100,
+      cacheTTLMinutes: 30
     };
   </script>
   <script src="js/main.js"></script>
