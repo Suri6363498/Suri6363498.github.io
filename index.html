@@ -4,13 +4,17 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Suri | Portfolio</title>
+  <meta name="description" content="Suri — Data Engineering and AI projects portfolio." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header>
-    <div class="wrap">
-      <div><strong>Suri</strong></div>
-      <nav>
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="Suri home">Suri</a>
+      <nav class="nav">
         <a href="#projects">Projects</a>
         <a href="#contact">Contact</a>
       </nav>
@@ -18,93 +22,144 @@
   </header>
 
   <main>
-    <section class="hero" aria-label="Intro">
-      <h1>Hi, I'm Suri</h1>
-      <p>Data engineering and AI projects.</p>
-    </section>
-
-    <!-- ===== Projects Section ===== -->
-    <section id="projects" class="projects" aria-label="Projects">
-      <h2>Projects</h2>
-      <div class="project-grid">
-
-        <!-- azure-data-engineering-pipeline -->
-        <article class="project-card">
-          <h3>azure-data-engineering-pipeline</h3>
-          <p>No description provided.</p>
-          <div class="project-meta"></div>
-          <div class="project-actions">
-            <a class="btn primary" href="https://github.com/Suri6363498/azure-data-engineering-pipeline" target="_blank" rel="noopener noreferrer">View Repo</a>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow">Data Engineering • AI</p>
+          <h1>Hi, I'm <span class="grad-text">Suri</span>. I build robust data pipelines and practical AI solutions.</h1>
+          <p class="lead">From ingestion to visualization: Databricks, PySpark, Salesforce, Tableau, and cloud-native tooling.</p>
+          <div class="actions">
+            <a class="btn primary" href="#projects">View Projects</a>
+            <a class="btn ghost" href="#contact">Get in touch</a>
           </div>
-        </article>
-
-        <!-- retail-data-engineering-pipeline -->
-        <article class="project-card">
-          <h3>retail-data-engineering-pipeline</h3>
-          <p>A complete end-to-end data engineering pipeline project using PySpark, Google Colab, and Data Studio</p>
-          <div class="project-meta">
-            <span class="badge">Jupyter Notebook</span>
-            <span class="badge">Python</span>
+        </div>
+        <div class="hero-media" aria-hidden="true">
+          <div class="avatar">
+            <!-- Optional: replace with your image -->
+            <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+                  <stop offset="0%" stop-color="#60a5fa"/>
+                  <stop offset="100%" stop-color="#7c3aed"/>
+                </linearGradient>
+              </defs>
+              <circle cx="60" cy="60" r="56" fill="url(#g)"/>
+            </svg>
           </div>
-          <div class="project-actions">
-            <a class="btn primary" href="https://github.com/Suri6363498/retail-data-engineering-pipeline" target="_blank" rel="noopener noreferrer">View Repo</a>
-          </div>
-        </article>
-
-        <!-- sales-forecasting-dashboard -->
-        <article class="project-card">
-          <h3>sales-forecasting-dashboard</h3>
-          <p>AI-powered Sales Forecasting Dashboard using Salesforce and Tableau Cloud.</p>
-          <div class="project-meta"></div>
-          <div class="project-actions">
-            <a class="btn primary" href="https://github.com/Suri6363498/sales-forecasting-dashboard" target="_blank" rel="noopener noreferrer">View Repo</a>
-          </div>
-        </article>
-
-        <!-- AI-Agent-Task-Assistant-project- -->
-        <article class="project-card">
-          <h3>AI-Agent-Task-Assistant-project-</h3>
-          <p>A simple multi-capability AI Agent built in Python</p>
-          <div class="project-meta">
-            <span class="badge">Python</span>
-          </div>
-          <div class="project-actions">
-            <a class="btn primary" href="https://github.com/Suri6363498/AI-Agent-Task-Assistant-project-" target="_blank" rel="noopener noreferrer">View Repo</a>
-          </div>
-        </article>
-
-        <!-- Portfolio -->
-        <article class="project-card">
-          <h3>Suri6363498.github.io</h3>
-          <p>Portfolio website (GitHub Pages).</p>
-          <div class="project-meta">
-            <span class="badge">HTML</span>
-            <span class="badge">CSS</span>
-            <span class="badge">JavaScript</span>
-          </div>
-          <div class="project-actions">
-            <a class="btn primary" href="https://github.com/Suri6363498/Suri6363498.github.io" target="_blank" rel="noopener noreferrer">View Repo</a>
-            <a class="btn ghost" href="https://Suri6363498.github.io/" target="_blank" rel="noopener noreferrer">Live Demo</a>
-          </div>
-        </article>
-
+        </div>
       </div>
     </section>
-    <!-- ===== End Projects Section ===== -->
 
-    <!-- ===== Contact Section ===== -->
-    <section id="contact" class="contact" aria-label="Contact">
-      <h2>Contact</h2>
-      <p>
-        Email: <a id="contact-email" href="mailto:surajkorishetti111@gmail.com">surajkorishetti111@gmail.com</a>
-        <button id="copy-email-btn" class="btn ghost small" type="button" aria-label="Copy email address">Copy</button>
-      </p>
+    <!-- Projects -->
+    <section id="projects" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Featured Projects</h2>
+          <p class="muted">A selection of my recent work.</p>
+        </div>
+
+        <div class="project-grid">
+          <!-- azure-data-engineering-pipeline -->
+          <article class="project-card">
+            <div class="card-top">
+              <h3>azure-data-engineering-pipeline</h3>
+            </div>
+            <p>No description provided.</p>
+            <div class="project-meta"></div>
+            <div class="project-actions">
+              <a class="btn primary" href="https://github.com/Suri6363498/azure-data-engineering-pipeline" target="_blank" rel="noopener noreferrer">View Repo</a>
+            </div>
+          </article>
+
+          <!-- retail-data-engineering-pipeline -->
+          <article class="project-card">
+            <div class="card-top">
+              <h3>retail-data-engineering-pipeline</h3>
+            </div>
+            <p>A complete end-to-end data engineering pipeline project using PySpark, Google Colab, and Data Studio</p>
+            <div class="project-meta">
+              <span class="badge">Jupyter Notebook</span>
+              <span class="badge">Python</span>
+            </div>
+            <div class="project-actions">
+              <a class="btn primary" href="https://github.com/Suri6363498/retail-data-engineering-pipeline" target="_blank" rel="noopener noreferrer">View Repo</a>
+            </div>
+          </article>
+
+          <!-- sales-forecasting-dashboard -->
+          <article class="project-card">
+            <div class="card-top">
+              <h3>sales-forecasting-dashboard</h3>
+            </div>
+            <p>AI-powered Sales Forecasting Dashboard using Salesforce and Tableau Cloud.</p>
+            <div class="project-meta"></div>
+            <div class="project-actions">
+              <a class="btn primary" href="https://github.com/Suri6363498/sales-forecasting-dashboard" target="_blank" rel="noopener noreferrer">View Repo</a>
+            </div>
+          </article>
+
+          <!-- AI-Agent-Task-Assistant-project- -->
+          <article class="project-card">
+            <div class="card-top">
+              <h3>AI-Agent-Task-Assistant-project-</h3>
+            </div>
+            <p>A simple multi-capability AI Agent built in Python</p>
+            <div class="project-meta">
+              <span class="badge">Python</span>
+            </div>
+            <div class="project-actions">
+              <a class="btn primary" href="https://github.com/Suri6363498/AI-Agent-Task-Assistant-project-" target="_blank" rel="noopener noreferrer">View Repo</a>
+            </div>
+          </article>
+
+          <!-- Portfolio -->
+          <article class="project-card">
+            <div class="card-top">
+              <h3>Suri6363498.github.io</h3>
+            </div>
+            <p>Portfolio website (GitHub Pages).</p>
+            <div class="project-meta">
+              <span class="badge">HTML</span>
+              <span class="badge">CSS</span>
+              <span class="badge">JavaScript</span>
+            </div>
+            <div class="project-actions">
+              <a class="btn primary" href="https://github.com/Suri6363498/Suri6363498.github.io" target="_blank" rel="noopener noreferrer">View Repo</a>
+              <a class="btn ghost" href="https://Suri6363498.github.io/" target="_blank" rel="noopener noreferrer">Live Demo</a>
+            </div>
+          </article>
+        </div>
+      </div>
     </section>
-    <!-- ===== End Contact Section ===== -->
+
+    <!-- Contact -->
+    <section id="contact" class="section">
+      <div class="container">
+        <div class="contact-card">
+          <h2>Contact</h2>
+          <p class="muted">Have a project in mind or want to collaborate?</p>
+          <p>
+            Email: <a id="contact-email" href="mailto:surajkorishetti111@gmail.com">surajkorishetti111@gmail.com</a>
+            <button id="copy-email-btn" class="btn ghost small" type="button" aria-label="Copy email address">Copy</button>
+          </p>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <footer>
-    © <span id="year"></span> Suri
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span>© <span id="year"></span> Suri</span>
+      <div class="social">
+        <a class="social-link" href="https://github.com/Suri6363498" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5a12 12 0 0 0-3.79 23.4c.6.11.82-.26.82-.58v-2.03c-3.34.73-4.04-1.61-4.04-1.61-.55-1.4-1.34-1.77-1.34-1.77-1.1-.76.08-.75.08-.75 1.22.09 1.86 1.26 1.86 1.26 1.08 1.85 2.83 1.31 3.52 1 .11-.8.42-1.32.76-1.62-2.66-.3-5.46-1.33-5.46-5.93 0-1.31.47-2.38 1.25-3.22-.13-.3-.54-1.52.12-3.16 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.3-1.55 3.3-1.23 3.3-1.23.66 1.64.25 2.86.12 3.16.78.84 1.25 1.9 1.25 3.22 0 4.61-2.8 5.62-5.47 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.69.83.57A12 12 0 0 0 12 .5z"/></svg>
+        </a>
+        <a class="social-link" href="mailto:surajkorishetti111@gmail.com" aria-label="Email">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 13.065 1.5 6.75V18a2.25 2.25 0 0 0 2.25 2.25h16.5A2.25 2.25 0 0 0 22.5 18V6.75l-10.5 6.315ZM12 10.935 22.5 4.5H1.5L12 10.935Z"/></svg>
+        </a>
+      </div>
+    </div>
   </footer>
 
   <script src="script.js"></script>
