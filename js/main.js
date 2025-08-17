@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Active nav highlighting on scroll (IntersectionObserver)
 document.addEventListener('DOMContentLoaded', () => {
-  const navLinks = Array.from(document.querySelectorAll('header nav a[href^="#"]'));
+  const navLinks = Array.from(document.querySelectorAll('.nav a[href^="#"]'));
   const sections = Array.from(document.querySelectorAll('main section[id]'));
   if (!('IntersectionObserver' in window) || navLinks.length === 0 || sections.length === 0) return;
 
@@ -23,7 +23,6 @@ document.addEventListener('DOMContentLoaded', () => {
       if (entry.isIntersecting) setActive(entry.target.id);
     });
   }, {
-    // Offset top to account for sticky header
     root: null,
     rootMargin: '-120px 0px -60% 0px',
     threshold: 0.1
@@ -57,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
         ok = document.execCommand('copy');
         document.body.removeChild(ta);
       }
-    } catch (e) {
+    } catch {
       ok = false;
     }
 
