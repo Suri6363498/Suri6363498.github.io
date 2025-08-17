@@ -243,3 +243,43 @@
   loadUser();
   loadRepos();
 })();
+
+// Force-download the CV across browsers
+document.addEventListener('DOMContentLoaded', () => {
+  const link = document.getElementById('download-cv');
+  if (!link) return;
+
+  const href = link.getAttribute('href') || '/Suraj_Korishetti_Data_Engineer.pdf';
+  const filename = link.getAttribute('download') || 'Suraj_Korishetti_Data_Engineer.pdf';
+
+  link.addEventListener('click', async (e) => {
+    // Allow modifier-clicks to behave normally (open in new tab, etc.)
+    if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return;
+
+    e.preventDefault();
+    const originalText = link.textContent;
+    link.textContent = 'Downloading...';
+    link.setAttribute('aria-busy', 'true');
+
+    try {
+      const res = await fetch(href, { cache: 'no-store' });
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      const blob = await res.blob();
+      const url = URL.createObjectURL(blob);
+
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = filename; // forces a Save dialog with this name
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      URL.revokeObjectURL(url);
+    } catch (err) {
+      // Fallback: normal navigation (may open in browser)
+      window.location.href = href;
+    } finally {
+      link.textContent = originalText;
+      link.removeAttribute('aria-busy');
+    }
+  });
+});
