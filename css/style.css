@@ -263,3 +263,43 @@ a:focus-visible, button:focus-visible, select:focus-visible, input:focus-visible
   .filters { grid-template-columns: 1fr; }
   .nav-container { flex-direction: column; gap: 8px; }
 }
+
+/* About section enhancements */
+.bio {
+  max-width: 780px;
+  margin: 8px auto 0;
+  color: var(--muted);
+}
+
+.facts-list {
+  margin: 12px auto 0;
+  padding: 0;
+  list-style: none;
+  color: var(--muted);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 14px;
+  justify-content: center;
+}
+.facts-list li {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 6px 12px;
+  font-weight: 700;
+}
+
+/* Buttons layout + primary variant */
+.actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 12px;
+}
+.btn.primary {
+  background: var(--primary);
+  color: #fff;
+  border-color: var(--primary);
+}
+
