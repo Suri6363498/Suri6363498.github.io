@@ -7,11 +7,11 @@ body {
   color: #333;
 }
 
+/* Navigation */
 nav {
   background: #007bff;
   padding: 1rem;
 }
-
 nav ul {
   display: flex;
   justify-content: center;
@@ -19,54 +19,118 @@ nav ul {
   margin: 0;
   padding: 0;
 }
-
 nav ul li {
   margin: 0 1rem;
 }
-
 nav ul li a {
   color: #fff;
   text-decoration: none;
   font-weight: bold;
 }
 
+/* Header / About */
 header {
   text-align: center;
   padding: 50px 20px;
   background-color: #e3f2fd;
 }
-
 .profile-img {
   width: 150px;
   border-radius: 50%;
   margin-bottom: 20px;
 }
+.hero-meta { color: #5b6b7a; margin: 6px 0 0; }
+.hero-links a {
+  display: inline-block;
+  margin: 8px 6px 0;
+  color: #0b3d91;
+  text-decoration: none;
+  font-weight: bold;
+}
+.hero-links a:hover { text-decoration: underline; }
 
+/* Sections */
 section {
   padding: 50px 20px;
   text-align: center;
 }
+.muted { color: #5b6b7a; }
 
-.cards {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 20px;
+/* Filters */
+.filters {
+  max-width: 960px;
+  margin: 10px auto 24px;
+  display: grid;
+  grid-template-columns: 1fr 200px 200px;
+  gap: 12px;
+}
+.filters input, .filters select {
+  padding: 10px 12px;
+  border: 1px solid #d8dade;
+  border-radius: 10px;
+  background: #fff;
 }
 
+/* Projects Cards */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
 .card {
   background: #fff;
   padding: 20px;
   border-radius: 12px;
-  width: 250px;
+  width: 100%;
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  text-align: left;
+}
+.card h3 {
+  margin: 0 0 8px;
+  font-size: 1.1rem;
+}
+.card p {
+  margin: 0 0 12px;
+  color: #556;
+  min-height: 40px;
+}
+.card .meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 16px;
+  color: #445;
+  font-size: 0.9rem;
+}
+.card .links {
+  margin-top: 12px;
+  display: flex;
+  gap: 10px;
+}
+.card .links a {
+  display: inline-block;
+  padding: 8px 12px;
+  border-radius: 10px;
+  text-decoration: none;
+  background: #edf2ff;
+  color: #0b3d91;
+  font-weight: 600;
+}
+.card .links a.primary {
+  background: #007bff;
+  color: #fff;
+}
+.card--placeholder {
+  text-align: center;
+  color: #5b6b7a;
 }
 
+/* Skills */
 .skills-list {
   list-style: none;
   padding: 0;
 }
-
 .skills-list li {
   display: inline-block;
   background: #007bff;
@@ -74,4 +138,9 @@ section {
   margin: 5px 10px;
   padding: 5px 15px;
   border-radius: 20px;
+}
+
+/* Responsive */
+@media (max-width: 720px) {
+  .filters { grid-template-columns: 1fr; }
 }
