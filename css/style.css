@@ -330,3 +330,22 @@ a:focus-visible, button:focus-visible, select:focus-visible, input:focus-visible
   border-color: var(--primary);
 }
 
+/* LinkedIn Badge Styling */
+.linkedin-badge {
+  margin-top: 20px;      /* Space above badge */
+  display: inline-block;  /* Align with profile content */
+}
+
+.linkedin-badge .badge-base {
+  border-radius: 8px;    /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Subtle shadow */
+}
+
+/* Optional: center the badge under the bio */
+header.hero .linkedin-badge {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
