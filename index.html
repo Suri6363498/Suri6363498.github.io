@@ -1,74 +1,168 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suraj Korishetti | Portfolio</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Suri | Portfolio</title>
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="css/style.css">
+  <!-- Page styles (you can move these to your main CSS file) -->
+  <style>
+    :root {
+      --card-bg: #ffffff;
+      --card-border: #e5e7eb;
+      --card-shadow: 0 6px 18px rgba(0,0,0,0.06);
+      --text: #111827;
+      --muted: #6b7280;
+      --accent: #2563eb;
+      --accent-contrast: #ffffff;
+      --badge-bg: #f3f4f6;
+      --badge-text: #374151;
+      --bg: #f9fafb;
+    }
+    body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji"; color: var(--text); background: var(--bg); }
+    header { padding: 1rem 1.25rem; background: #fff; border-bottom: 1px solid #e5e7eb; position: sticky; top: 0; z-index: 10; }
+    header .wrap { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
+    header nav a { text-decoration: none; color: var(--text); margin-left: 1rem; font-weight: 600; }
+    main { max-width: 1100px; margin: 0 auto; padding: 1.5rem 1.25rem 3rem; }
+    .hero { padding: 2rem 0 0.5rem; }
+    .hero h1 { margin: 0 0 0.5rem; font-size: 2rem; }
+    .hero p { margin: 0; color: var(--muted); }
 
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZNTBPHQ1QC"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-ZNTBPHQ1QC');
-  </script>
+    .projects { padding: 2rem 0; }
+    .projects h2 { margin: 0 0 1rem; font-size: 1.75rem; color: var(--text); }
+    .project-grid { display: grid; grid-template-columns: repeat(1, minmax(0, 1fr)); gap: 1rem; }
+    @media (min-width: 640px) { .project-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    @media (min-width: 1024px) { .project-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+
+    .project-card {
+      background: var(--card-bg); border: 1px solid var(--card-border);
+      border-radius: 12px; padding: 1rem; box-shadow: var(--card-shadow);
+      display: flex; flex-direction: column; gap: 0.75rem;
+    }
+    .project-card h3 { margin: 0; font-size: 1.125rem; color: var(--text); line-height: 1.3; word-break: break-word; }
+    .project-card p { margin: 0; color: var(--muted); font-size: 0.95rem; }
+    .project-meta { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .badge {
+      display: inline-flex; align-items: center; gap: 0.4em;
+      background: var(--badge-bg); color: var(--badge-text);
+      border-radius: 999px; padding: 0.2rem 0.6rem; font-size: 0.8rem; line-height: 1.2; white-space: nowrap;
+    }
+    .project-actions { margin-top: auto; display: flex; gap: 0.5rem; flex-wrap: wrap; }
+    .btn { display: inline-block; padding: 0.5rem 0.75rem; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 0.9rem; }
+    .btn.primary { background: var(--accent); color: var(--accent-contrast); }
+    .btn.ghost { background: transparent; color: var(--accent); border: 1px solid var(--accent); }
+
+    /* Contact section styles */
+    .contact { padding: 2rem 0; }
+    .contact h2 { margin: 0 0 0.75rem; font-size: 1.5rem; }
+    .contact p { margin: 0; color: var(--muted); font-size: 1rem; }
+    #contact-email { color: var(--accent); text-decoration: none; }
+    #contact-email:hover { text-decoration: underline; }
+
+    footer { padding: 2rem 1.25rem; text-align: center; color: var(--muted); }
+  </style>
 </head>
 <body>
-
-  <!-- Navigation -->
-  <nav>
-    <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
-
-  <!-- Hero Section -->
-  <header id="about">
-    <img src="images/profile.png" alt="Suraj Korishetti" width="200">
-    <h1>Hello, I’m Suraj 👋</h1>
-    <p>Welcome to my portfolio website 🚀</p>
+  <header>
+    <div class="wrap">
+      <div><strong>Suri</strong></div>
+      <nav>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
   </header>
 
-  <!-- Projects Section -->
-  <section id="projects">
-    <h2>Projects</h2>
-    <div class="cards">
-      <div class="card">
-        <h3>Project 1</h3>
-        <p>Short description of your project.</p>
+  <main>
+    <section class="hero" aria-label="Intro">
+      <h1>Hi, I'm Suri</h1>
+      <p>Data engineering and AI projects.</p>
+    </section>
+
+    <!-- ===== Projects Section ===== -->
+    <section id="projects" class="projects" aria-label="Projects">
+      <h2>Projects</h2>
+      <div class="project-grid">
+
+        <!-- azure-data-engineering-pipeline -->
+        <article class="project-card">
+          <h3>azure-data-engineering-pipeline</h3>
+          <p>No description provided.</p>
+          <div class="project-meta"></div>
+          <div class="project-actions">
+            <a class="btn primary" href="https://github.com/Suri6363498/azure-data-engineering-pipeline" target="_blank" rel="noopener">View Repo</a>
+          </div>
+        </article>
+
+        <!-- retail-data-engineering-pipeline -->
+        <article class="project-card">
+          <h3>retail-data-engineering-pipeline</h3>
+          <p>A complete end-to-end data engineering pipeline project using PySpark, Google Colab, and Data Studio</p>
+          <div class="project-meta">
+            <span class="badge">Jupyter Notebook</span>
+            <span class="badge">Python</span>
+          </div>
+          <div class="project-actions">
+            <a class="btn primary" href="https://github.com/Suri6363498/retail-data-engineering-pipeline" target="_blank" rel="noopener">View Repo</a>
+          </div>
+        </article>
+
+        <!-- sales-forecasting-dashboard -->
+        <article class="project-card">
+          <h3>sales-forecasting-dashboard</h3>
+          <p>AI-powered Sales Forecasting Dashboard using Salesforce and Tableau Cloud.</p>
+          <div class="project-meta"></div>
+          <div class="project-actions">
+            <a class="btn primary" href="https://github.com/Suri6363498/sales-forecasting-dashboard" target="_blank" rel="noopener">View Repo</a>
+          </div>
+        </article>
+
+        <!-- AI-Agent-Task-Assistant-project- -->
+        <article class="project-card">
+          <h3>AI-Agent-Task-Assistant-project-</h3>
+          <p>A simple multi-capability AI Agent built in Python</p>
+          <div class="project-meta">
+            <span class="badge">Python</span>
+          </div>
+          <div class="project-actions">
+            <a class="btn primary" href="https://github.com/Suri6363498/AI-Agent-Task-Assistant-project-" target="_blank" rel="noopener">View Repo</a>
+          </div>
+        </article>
+
+        <!-- Portfolio -->
+        <article class="project-card">
+          <h3>Suri6363498.github.io</h3>
+          <p>Portfolio website (GitHub Pages).</p>
+          <div class="project-meta">
+            <span class="badge">HTML</span>
+            <span class="badge">CSS</span>
+            <span class="badge">JavaScript</span>
+          </div>
+          <div class="project-actions">
+            <a class="btn primary" href="https://github.com/Suri6363498/Suri6363498.github.io" target="_blank" rel="noopener">View Repo</a>
+            <a class="btn ghost" href="https://Suri6363498.github.io/" target="_blank" rel="noopener">Live Demo</a>
+          </div>
+        </article>
+
       </div>
-      <div class="card">
-        <h3>Project 2</h3>
-        <p>Short description of your project.</p>
-      </div>
-    </div>
-  </section>
+    </section>
+    <!-- ===== End Projects Section ===== -->
 
-  <!-- Skills Section -->
-  <section id="skills">
-    <h2>Skills</h2>
-    <ul class="skills-list">
-      <li>Web Development</li>
-      <li>Data Science</li>
-      <li>Python / SQL</li>
-      <li>Machine Learning</li>
-    </ul>
-  </section>
+    <!-- ===== Contact Section ===== -->
+    <section id="contact" class="contact" aria-label="Contact">
+      <h2>Contact</h2>
+      <p>Email: <a id="contact-email" href="mailto:surajkorishetti111@gmail.com">surajkorishetti111@gmail.com</a></p>
+    </section>
+    <!-- ===== End Contact Section ===== -->
+  </main>
 
-  <!-- Contact Section -->
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Email:surajkorishetti111@gmail.com</p>
-  </section>
+  <footer>
+    © <span id="year"></span> Suri
+  </footer>
 
-  <!-- JS -->
-  <script src="js/main.js"></script>
+  <script>
+    // Set current year in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
