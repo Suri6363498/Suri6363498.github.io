@@ -332,8 +332,9 @@ a:focus-visible, button:focus-visible, select:focus-visible, input:focus-visible
 
 /* LinkedIn Btn Styling */
 .linkedin-btn {
-  display: inline-block;
-  background-color: #0077B5; /* LinkedIn blue */
+  display: inline-flex;          /* logo + text alignment */
+  align-items: center;           /* vertically center */
+  background-color: #0077B5;     /* LinkedIn blue */
   color: #fff;
   padding: 10px 20px;
   border-radius: 6px;
@@ -346,5 +347,6 @@ a:focus-visible, button:focus-visible, select:focus-visible, input:focus-visible
 .linkedin-btn:hover {
   background-color: #005983;
 }
+
 
 
